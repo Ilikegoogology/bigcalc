@@ -3,8 +3,8 @@ function calculate() {
     let result;
 
     try {
-        // Replace exponentiation with Big.js's power function
-        const expression = input.replace(/(\d+(?:\.\d+)?)/g, 'new Big("$1")') // Replace numbers with Big instances
+        // Replace numbers with Big instances
+        const expression = input.replace(/(\d+(?:\.\d+)?)/g, 'new Big("$1")')
                                  .replace(/(\w+)\^(\w+)/g, 'Big("$1").pow(Big("$2"))'); // Handle exponentiation
 
         // Evaluate the expression using eval
